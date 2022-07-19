@@ -1,6 +1,6 @@
 def caesar_cipher(string, shift_key)
     letters_az = ('a'..'z').to_a
-    characters = [" ", "!", "?", ",", "." ,":", "'"]
+    characters = [" ", "!"]
     letters = string.downcase.split("")
     array = []
 
@@ -23,21 +23,6 @@ def caesar_cipher(string, shift_key)
             end
             if letter == "!"
                 result = characters[1]
-            end
-            if letter == "?"
-                result = characters[2]
-            end
-            if letter == ","
-                result = characters[3]
-            end
-            if letter == "."
-                result = characters[4]
-            end
-            if letter == ":"
-                result = characters[5]
-            end
-            if letter == "'"
-                result = characters[6]
             end
                 $ring = "#{result}"
         end
