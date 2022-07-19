@@ -47,3 +47,4 @@ def caesar_cipher(string, shift_key)
 end
 puts "Write the secret then the shift-key:"
 caesar_cipher(gets.chomp, gets.to_i)
+puts "Bingo!"

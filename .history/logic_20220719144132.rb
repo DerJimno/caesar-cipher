@@ -1,5 +1,5 @@
-def caesar_cipher(string, shift_key)
-    letters_az = ('a'..'z').to_a
+def caesar_cipher(string, shift_by)
+    letters_az = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     characters = [" ", "!", "?", ",", "." ,":", "'"]
     letters = string.downcase.split("")
     array = []
@@ -8,7 +8,7 @@ def caesar_cipher(string, shift_key)
         letters_az.each_with_index do |alphabet, index|
 
             if  letter == alphabet
-                new_index = index + shift_key 
+                new_index = index + shift_by 
                 if  new_index >= 26 
                     new_index = new_index - 26 
                 end
@@ -37,13 +37,14 @@ def caesar_cipher(string, shift_key)
                 result = characters[5]
             end
             if letter == "'"
-                result = characters[6]
+                $result = characters[6]
             end
-                $ring = "#{result}"
         end
-        array << $ring
+        array << $result
     end
     p array.join().capitalize
 end
-puts "Write the secret then the shift-key:"
-caesar_cipher(gets.chomp, gets.to_i)
+caesar_cipher("Dfpzef qnkj, ozxy ktw wjfq!", -5)
+#puts "Write the secret then the shift-key:"
+#caesar_cipher(gets.chomp, gets.to_i)
+#puts "Bingo!"
